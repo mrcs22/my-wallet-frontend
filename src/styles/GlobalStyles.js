@@ -47,9 +47,11 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         color: inherit;
+        
     }
     * {
         box-sizing: border-box;
+        font-family: inherit;
     }
     body {
     font-family: 'Raleway', sans-serif;
