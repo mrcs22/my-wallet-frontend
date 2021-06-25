@@ -5,6 +5,8 @@ import styled from "styled-components";
 import Container from "../Container";
 import NotransactionsText from "./NoTransactionsText";
 import Transaction from "./Transaction";
+import formatValue from "../../helpers/formatValue";
+import logOut from "../../helpers/logOut";
 
 export default function TransactionsViewer({ token }) {
   const history = useHistory();
@@ -27,7 +29,7 @@ export default function TransactionsViewer({ token }) {
 
     promise.catch((err) => {
       if (err.response.status === 401) {
-        history.push("/");
+        logOut(history);
       }
     });
   }, []);
@@ -58,23 +60,6 @@ export default function TransactionsViewer({ token }) {
       )}
     </TransactionsContainer>
   );
-
-  function formatValue(value) {
-    if (!value) return;
-    const valueModulus = Math.sqrt(value ** 2);
-    const stringValue = valueModulus.toString();
-
-    const result =
-      valueModulus < 9
-        ? `0,0${valueModulus}`
-        : valueModulus < 99
-        ? `0,${valueModulus}`
-        : stringValue.substring(0, stringValue.length - 2) +
-          "," +
-          stringValue.substring(stringValue.length - 2);
-
-    return result;
-  }
 }
 
 const TransactionsContainer = styled(Container)`
