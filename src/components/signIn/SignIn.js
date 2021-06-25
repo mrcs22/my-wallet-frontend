@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Logo from "../Logo";
 import Container from "../Container";
 import TextInput from "../TextInput";
@@ -14,6 +14,15 @@ export default function SignIn() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const userData = JSON.parse(localStorage.getItem("userData"));
+
+  useEffect(() => {
+    if (userData) {
+      setUser(userData);
+      history.push("/dashboard");
+      return null;
+    }
+  }, []);
 
   return (
     <Container>
@@ -41,6 +50,7 @@ export default function SignIn() {
 
   function trySignIn(e) {
     e.preventDefault();
+
     const promise = axios.post("http://localhost:4000/sign-in", {
       email,
       password,
@@ -48,6 +58,7 @@ export default function SignIn() {
 
     promise.then((res) => {
       setUser(res.data);
+      localStorage.setItem("userData", JSON.stringify(res.data));
       history.push("/dashboard");
     });
 

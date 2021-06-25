@@ -29,6 +29,7 @@ export default function TransactionsViewer({ token }) {
 
     promise.catch((err) => {
       if (err.response.status === 401) {
+        alert("Sua sessão expirou. Faça login novamente");
         logOut(history);
       }
     });
