@@ -26,10 +26,19 @@ const TransactionContainer = styled.div`
   margin-bottom: 20px;
 
   & > div {
+    width: 100%;
     display: flex;
     font-size: 16px;
     color: #000;
 
+    overflow: hidden;
+
+    & > div {
+      width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     p {
       color: #c6c6c6;
       margin-right: 10px;

@@ -25,6 +25,8 @@ const MenuContainer = styled.div`
   height: 143px;
   width: 100%;
 
+  min-width: 225px;
+
   margin-top: 13px;
 `;
 
@@ -33,7 +35,10 @@ const Option = styled(Link)`
   flex-direction: column;
   justify-content: space-between;
   height: 114px;
-  width: 155px;
+  width: 45vw;
+  min-width: 110px;
+
+  max-width: 155px;
 
   font-size: 17px;
   font-weight: 700;

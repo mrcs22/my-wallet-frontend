@@ -65,6 +65,7 @@ export default function TransactionsViewer({ token }) {
 
 const TransactionsContainer = styled(Container)`
   height: calc(100vh - 221px);
+  width: 100%;
   min-height: 200px;
   justify-content: space-between;
 
@@ -77,7 +78,8 @@ const TransactionsContainer = styled(Container)`
   & > div {
     height: calc(100% - 20px);
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   & > p {
