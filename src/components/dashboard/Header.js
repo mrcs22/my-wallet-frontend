@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { RiLogoutBoxRLine } from "react-icons/ri";
+import { useHistory } from "react-router-dom";
+import logOut from "../../helpers/logOut";
 
-export default function Header({ userName }) {
+export default function Header({ userName, token }) {
+  const history = useHistory();
   return (
     <HeaderContainer>
       <p>Olá, {userName}</p>
-      <RiLogoutBoxRLine />
+      <RiLogoutBoxRLine onClick={() => logOut(history, token)} />
     </HeaderContainer>
   );
 }

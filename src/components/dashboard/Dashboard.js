@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   return (
     <Container notCentered>
-      <Header userName={user?.name} />
+      <Header userName={user?.name} token={user.token} />
       <TransactionsViewer token={user?.token} />
       <Menu />
     </Container>
