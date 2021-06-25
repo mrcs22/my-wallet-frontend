@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { RiLogoutBoxRLine } from "react-icons/ri";
 
 export default function Header({ userName }) {
   return (
     <HeaderContainer>
-      <p>Olá, {userName}</p>
-      <RiLogoutBoxRLine />
+      <p>Nova entrada</p>
     </HeaderContainer>
   );
 }

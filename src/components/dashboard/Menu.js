@@ -6,11 +6,11 @@ import styled from "styled-components";
 export default function Menu() {
   return (
     <MenuContainer>
-      <Option>
+      <Option to="/new-entry">
         <AiOutlinePlusCircle />
         Nova <br /> Entrada
       </Option>
-      <Option>
+      <Option to="/new-out">
         <AiOutlineMinusCircle />
         Nova <br />
         saída
