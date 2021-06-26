@@ -28,8 +28,11 @@ export default function TransactionsViewer({ token }) {
     });
 
     promise.catch((err) => {
-      if (err.response.status === 401) {
+      if (err.response?.status === 401) {
         alert("Sua sessão expirou. Faça login novamente");
+        logOut(history);
+      } else {
+        alert("Erro inesperado. Tente novamente mais tarde");
         logOut(history);
       }
     });

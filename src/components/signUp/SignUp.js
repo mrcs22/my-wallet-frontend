@@ -73,13 +73,13 @@ export default function SignUp() {
     });
 
     promise.catch((err) => {
-      if (err.response.status === 409) {
+      if (err.response?.status === 409) {
         alert("email já cadastrado");
         clearInputs();
-      } else if (err.response.status === 400) {
+      } else if (err.response?.status === 400) {
         alert("Preencha os dados corretamente");
       } else {
-        alert("Erro inesperado. Tente novamente");
+        alert("Erro inesperado. Tente novamente mais tarde.");
         clearInputs();
       }
     });

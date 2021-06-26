@@ -61,15 +61,16 @@ export default function NewOut({ token }) {
     });
 
     promise.catch((err) => {
-      if (err.response.status === 401) {
+      if (err.response?.status === 401) {
         alert("Sua sessão expirou. Faça login novamente");
         logOut(history);
       } else if (err.response?.status === 400) {
         alert("Descrição e/ou valor inválidos");
         clearInputs();
       } else {
-        alert("Erro inesperado. Tente novamente.");
+        alert("Erro inesperado");
         clearInputs();
+        logOut(history);
       }
     });
   }
