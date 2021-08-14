@@ -30,11 +30,10 @@
 
 # Technologies
 
-- [Technologies]()
-  - [ReactJS](https://pt-br.reactjs.org/)
-    - [React Router Dom](https://reactrouter.com/)
-    - [Styled Components](https://styled-components.com/)
-  - [Axios](https://axios-http.com/)
+- [ReactJS](https://pt-br.reactjs.org/)
+  - [React Router Dom](https://reactrouter.com/)
+  - [Styled Components](https://styled-components.com/)
+- [Axios](https://axios-http.com/)
 
 <hr>
 
@@ -56,7 +55,13 @@
   https://yarnpkg.com/
   ```
 
-<hr>
+- My Wallet Back-end to handle requests
+
+  ```sh
+  See https://github.com/mrcs22/my-wallet-backend
+  ```
+
+  <hr>
 
 ```bash
 # Clone this repo by running
@@ -66,13 +71,15 @@ $ git clone https://github.com/mrcs22/my-wallet-frontend
 # Change to the project directory
 $ cd my-wallet-frontend
 
+# Provide the API url in the .env file
+
 # Install the dependencies by running
 $ yarn or npm install
 
 # Run the project using
 $ yarn start or npm run start
 
-# Otionally you can build the project by running
+# Optionally you can build the project by running
 $ yarn build or npm run buld
 ```
 
