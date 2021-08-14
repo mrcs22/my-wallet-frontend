@@ -7,7 +7,11 @@ export default async function logOut(history, token) {
         Authorization: `Bearer ${token}`,
       },
     };
-    await axios.post("http://localhost:4000/sign-out", {}, config);
+    await axios.post(
+      `${process.env.REACT_APP_API_BASE_URL}/sign-out`,
+      {},
+      config
+    );
   }
 
   localStorage.removeItem("userData");

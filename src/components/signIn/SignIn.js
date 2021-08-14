@@ -51,10 +51,13 @@ export default function SignIn() {
   function trySignIn(e) {
     e.preventDefault();
 
-    const promise = axios.post("http://localhost:4000/sign-in", {
-      email,
-      password,
-    });
+    const promise = axios.post(
+      `${process.env.REACT_APP_API_BASE_URL}/sign-in`,
+      {
+        email,
+        password,
+      }
+    );
 
     promise.then((res) => {
       setUser(res.data);

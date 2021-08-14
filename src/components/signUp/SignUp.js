@@ -62,11 +62,14 @@ export default function SignUp() {
       return;
     }
 
-    const promise = axios.post("http://localhost:4000/sign-up", {
-      name,
-      email,
-      password,
-    });
+    const promise = axios.post(
+      `${process.env.REACT_APP_API_BASE_URL}/sign-up`,
+      {
+        name,
+        email,
+        password,
+      }
+    );
 
     promise.then(() => {
       history.push("/");

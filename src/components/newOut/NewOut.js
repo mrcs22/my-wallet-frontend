@@ -34,7 +34,7 @@ export default function NewOut({ token }) {
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
-        <Button type="submit" value="Salvar entrada" />
+        <Button type="submit" value="Salvar saída" />
       </InputsHolder>
     </Container>
   );
@@ -47,7 +47,7 @@ export default function NewOut({ token }) {
       },
     };
     const promise = axios.post(
-      "http://localhost:4000/transactions",
+      `${process.env.REACT_APP_API_BASE_URL}/transactions`,
       {
         description,
         value,

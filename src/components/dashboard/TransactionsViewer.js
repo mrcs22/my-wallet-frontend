@@ -20,7 +20,10 @@ export default function TransactionsViewer({ token }) {
       },
     };
 
-    const promise = axios.get("http://localhost:4000/transactions", config);
+    const promise = axios.get(
+      `${process.env.REACT_APP_API_BASE_URL}/transactions`,
+      config
+    );
 
     promise.then((res) => {
       setTransactions(res.data.transactions);

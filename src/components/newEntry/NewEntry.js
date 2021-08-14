@@ -47,7 +47,7 @@ export default function NewEntry({ token }) {
       },
     };
     const promise = axios.post(
-      "http://localhost:4000/transactions",
+      `${process.env.REACT_APP_API_BASE_URL}/transactions`,
       {
         description,
         value,
